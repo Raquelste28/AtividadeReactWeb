@@ -1,24 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { ReactDOM } from 'react-dom/client';
-
-export default function App() {
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+function App() {
   return (
-    <div className="App" align="center" >
-      <html>
-        <head>
-          <title>Tela</title>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></link>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        </head>
-        <body>
-          <div class="container"> <h1>Formulário</h1>
-            <label>Email </label> <br />
-            <input type="text" name="email" /><br /> <label>Senha </label><br />
-            <input type="text" name="senha" /><br />
-            <input type="submit" name="submit" value="Acessar"></input>
-          </div>
-        </body>
-      </html>
-    </div>
-  )
+    <Container style={{ width: 300, marginTop: 100 }} >
+      <Form >
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" />
+          <Form.Text className="text-muted">
+
+          </Form.Text>
+        </Form.Group>
+      </Form>
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control type="Senha" />
+        </Form.Group>
+      </Form>
+      <Button style={{ width: 275, color: "white", backgroundColor: "#0e6cf7" }} variant="button">Acessar</Button>{' '}
+
+    </Container>
+
+  );
 }
+
+export default App;
